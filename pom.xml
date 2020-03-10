@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.appium</groupId>
+  <artifactId>nesine</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>nesine</name>
+  <url>http://maven.apache.org</url>
+
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <appium.version>6.0.0-BETA5</appium.version>
+    <selenium.version>3.11.0</selenium.version>
+    <testng.version>6.14.3</testng.version>
+    <default.testng>TestNG-Cucumber.xml</default.testng>
+</properties>
+
+<dependencies>
+    <dependency>
+        <groupId>io.appium</groupId>
+        <artifactId>java-client</artifactId>
+        <version>${appium.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>${testng.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-java8</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-jvm</artifactId>
+        <version>1.2.5</version>
+        <type>pom</type>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-core</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>gherkin</artifactId>
+        <version>2.12.2</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-picocontainer</artifactId>
+        <version>1.2.5</version>
+    </dependency>
+
+    <dependency>
+        <groupId>net.masterthought</groupId>
+        <artifactId>cucumber-reporting</artifactId>
+        <version>3.14.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.14.3</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        
+        <plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>default-clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+				<argLine>-Dfile.encoding=UTF-8</argLine>
+					<suiteXmlFiles>
+						<suiteXmlFile>${default.testng}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+        <plugin>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>3.8.0</version>
+            <executions>
+                <execution>
+                    <id>execution</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <projectName>nesine</projectName>  
+                        <outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+                        <cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+                        <buildNumber>1</buildNumber>
+                        <parallelTesting>false</parallelTesting>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+</project>

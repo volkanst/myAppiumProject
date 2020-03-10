@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+ 
+<suite name="myTst" >
+  
+    <test name="Pixel 2 Android 9.0 test" >
+        <parameter name="deviceName" value="Pixel 2 Android 9.0 test" />
+        <parameter name="platformVersion" value="9.0" />
+        <classes>
+            <class name="com.appium.nesine.cucumber.tests.RunCucumberFeatures"></class>
+        </classes>
+    </test>
+ 
+</suite>

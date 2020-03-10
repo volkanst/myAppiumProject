@@ -1,0 +1,15 @@
+/target/
+
+\.classpath
+
+\.project
+
+\.settings/
+
+test-output/old/
+
+test-output/
+
+target/
+
+.idea/
