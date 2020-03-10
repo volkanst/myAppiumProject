@@ -36,7 +36,6 @@ public class RunCucumberFeatures extends BaseTest {
     @Test(groups = "cucumber", description = "Runs Football Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
         System.out.println("Cucumber Test Class Inside Test");
-        System.out.println(cucumberFeature.getCucumberFeature());
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 

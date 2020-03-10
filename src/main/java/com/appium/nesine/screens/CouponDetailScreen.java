@@ -33,6 +33,7 @@ public class CouponDetailScreen extends BaseScreen {
     }
 
     public void clickCouponDetailHemenOynaButton() {
+        Assert.assertTrue(isElementPresent(DETAIL_HEMEN_OYNA_BTN_ID),"Kupon Detay : Hemen Oyna butonu bulunamadı.");
         waitAndClick(DETAIL_HEMEN_OYNA_BTN_ID);
     }
 
@@ -44,6 +45,6 @@ public class CouponDetailScreen extends BaseScreen {
             basketCode.add(matchCodetxt);
         }
         Assert.assertTrue(isTwoListEquals(basketCode, matchCode), "maç isim listesi hatalı.");
-        System.out.println("Sepet Maç Listesi :" + basketCode);
+        System.out.println("Sepet Maç Listesi : " + basketCode);
     }
 }
