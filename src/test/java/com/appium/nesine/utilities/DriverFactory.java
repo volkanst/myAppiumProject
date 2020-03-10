@@ -40,12 +40,6 @@ public class DriverFactory {
         capabilities.setCapability("platformVersion", platformVersion);
         capabilities.setCapability("deviceName", deviceName);
 
-//        //Set appPath
-//        String userDir = System.getProperty("user.dir");
-//        String localApp = "Lazada.app.zip";
-//        String appPath = userDir + "/" + localApp;
-//        capabilities.setCapability("app", appPath);
-
         driver = new IOSDriver(serverAddress, capabilities);
         driverWait = new WebDriverWait(driver, 90);
     }
