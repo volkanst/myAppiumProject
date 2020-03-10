@@ -5,7 +5,7 @@ import com.appium.nesine.screens.*;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.When;
 
-public class BasePageStepDef extends BaseSteps{
+public class BasePageStepDef extends BaseSteps {
 
     BaseScreen baseScreen;
     LoginPageScreen loginPageScreen;
@@ -16,7 +16,7 @@ public class BasePageStepDef extends BaseSteps{
 
 
     @Before
-    public void setupLoginSteps () {
+    public void setupLoginSteps() {
         setupCucumber();
         baseScreen = new BaseScreen(ThreadLocalDriver.getTLDriver());
         basePageScreen = new BasePageScreen(ThreadLocalDriver.getTLDriver());
@@ -25,6 +25,7 @@ public class BasePageStepDef extends BaseSteps{
         loginPageScreen = new LoginPageScreen(ThreadLocalDriver.getTLDriver());
         homePageScreen = new HomePageScreen(ThreadLocalDriver.getTLDriver());
     }
+
     @When("^I click BasePage login button$")
     public void iClickBasePageLoginButton() {
         basePageScreen.iClickBasePageLoginButton();

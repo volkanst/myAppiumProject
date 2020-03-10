@@ -14,11 +14,6 @@ public class BasePageScreen extends BaseScreen {
 
     public void iClickBasePageLoginButton() {
         waitAndClick(GIRIS_YAP_BTN_ID);
-       /* if (checkElementIsEnabled(GIRIS_YAP_BTN_ID)) {
-            waitAndClick(GIRIS_YAP_BTN_ID);
-        }else {
-            notFoundElement(GIRIS_YAP_BTN_ID);
-        }*/
     }
 }
 

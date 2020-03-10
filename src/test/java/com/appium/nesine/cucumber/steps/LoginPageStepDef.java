@@ -15,7 +15,7 @@ public class LoginPageStepDef extends BaseSteps {
 
 
     @Before
-    public void setupLoginSteps () {
+    public void setupLoginSteps() {
         setupCucumber();
         baseScreen = new BaseScreen(ThreadLocalDriver.getTLDriver());
         basePageScreen = new BasePageScreen(ThreadLocalDriver.getTLDriver());

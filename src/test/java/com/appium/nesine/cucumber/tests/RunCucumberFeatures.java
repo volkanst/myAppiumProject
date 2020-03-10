@@ -1,30 +1,29 @@
 package com.appium.nesine.cucumber.tests;
 
 
+import com.appium.nesine.BaseTest;
 import cucumber.api.CucumberOptions;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import org.testng.annotations.*;
-import com.appium.nesine.BaseTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 
 @CucumberOptions(
         monochrome = true,
         tags = "@Kupondas",
         features = "src/test/java/com/appium/nesine/cucumber/features/Kupondas.feature",
-        glue = "com.appium.nesine.cucumber.steps" ,
+        glue = "com.appium.nesine.cucumber.steps",
         format = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt",
-                }
-                )
-public class RunCucumberFeatures extends  BaseTest {
+        }
+)
+public class RunCucumberFeatures extends BaseTest {
 
     private TestNGCucumberRunner testNGCucumberRunner;
 

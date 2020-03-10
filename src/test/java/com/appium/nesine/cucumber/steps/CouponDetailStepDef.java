@@ -6,7 +6,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
-public class CouponDetailStepDef extends BaseSteps{
+public class CouponDetailStepDef extends BaseSteps {
 
     BaseScreen baseScreen;
     LoginPageScreen loginPageScreen;
@@ -17,7 +17,7 @@ public class CouponDetailStepDef extends BaseSteps{
 
 
     @Before
-    public void setupLoginSteps () {
+    public void setupLoginSteps() {
         setupCucumber();
         baseScreen = new BaseScreen(ThreadLocalDriver.getTLDriver());
         basePageScreen = new BasePageScreen(ThreadLocalDriver.getTLDriver());

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class KupondasScreen extends BaseScreen{
+public class KupondasScreen extends BaseScreen {
 
     public KupondasScreen(AndroidDriver driver) {
         super(driver);
@@ -16,7 +16,6 @@ public class KupondasScreen extends BaseScreen{
     private static final String GENERAL_ID = "com.pordiva.nesine.android:id/";
     private static final By HEMEN_OYNA_BTN_ID = By.id(GENERAL_ID + "status_btn");
     private static final By TUM_PAYLASIMLAR_FILTER_BTN_ID = By.className("android.widget.TextView");
-
 
 
     public void clickKupondasPageTumPaylasimlarFilterButton() {

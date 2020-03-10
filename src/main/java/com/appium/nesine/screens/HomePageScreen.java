@@ -29,6 +29,5 @@ public class HomePageScreen extends BaseScreen {
                 elements.get(i).click();
             }
         }
-
     }
 }
